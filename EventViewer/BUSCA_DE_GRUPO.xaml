@@ -1,0 +1,31 @@
+﻿<Window x:Class="EventViewer.BUSCA_DE_GRUPO"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Consultar grupos de participantes - Sistema EventViewer" Height="427" Width="580" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Image Height="35" HorizontalAlignment="Left" Margin="11,12,0,0" Name="imageBarraBuscarGrupo" Source="/EventViewer;component/Imagens/Barra_Buscar_azul.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="534" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="23,17,0,0" Name="imageBuscar" Source="/EventViewer;component/Imagens/BUSCAR.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="69" />
+        <Image Height="78" HorizontalAlignment="Left" Margin="237,296,0,0" Name="imageOk" Source="/EventViewer;component/Imagens/botao_laranja_borda_normal_Ok.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="78" MouseDown="imageOk_MouseDown" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" EnableRowVirtualization="False" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="213" HorizontalAlignment="Left" IsReadOnly="True" Margin="12,77,0,0" Name="dataGridGrupos" VerticalAlignment="Top" Width="533" MouseDoubleClick="dataGridGrupos_MouseDoubleClick">
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.488" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.035" />
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id_grupo_de_participante}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Nome_grupo_de_participante}" Header="NOME DO GRUPO" />
+                <DataGridTextColumn Binding="{Binding Descricao_grupo_de_participante}" Header="DESCRIÇÃO" />
+                <DataGridTextColumn Header="QUANTIDADE DE PESSOAS" Binding="{Binding QuantidadeDePessoa}"/>
+                <DataGridCheckBoxColumn Binding="{Binding Status_grupo}" Header="STATUS"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Height="17" HorizontalAlignment="Left" Margin="248,21,0,0" Name="textBoxBuscar" VerticalAlignment="Top" Width="252" KeyDown="textBoxBuscar_KeyDown" MaxLength="45" />
+        <CheckBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Pesquisar qualquer parte do nome" FontFamily="Arial Unicode MS" FontSize="12" Foreground="#FF676967" Height="18" HorizontalAlignment="Left" Margin="12,53,0,0" Name="checkBoxPesquisarParteNome" VerticalAlignment="Top" Width="207" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Ativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" IsChecked="True" Margin="341,56,0,0" Name="radioButtonCadastroAtivo" VerticalAlignment="Top" Width="54" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Inativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="411,56,0,0" Name="radioButtonCadastroInativo" VerticalAlignment="Top" Width="62" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Todos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="490,56,0,0" Name="RadioButtonTodos" VerticalAlignment="Top" Width="55" />
+    </Grid>
+</Window>

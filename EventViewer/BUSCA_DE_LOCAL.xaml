@@ -1,0 +1,36 @@
+﻿<Window x:Class="EventViewer.BUSCA_DE_LOCAL"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Consultar locais de evento - Sistema EventViewer" Height="427" Width="736" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Image Height="35" Margin="12,11,12,0" Name="imageBarraBuscarLocal" Stretch="Fill" VerticalAlignment="Top" Source="/EventViewer;component/Imagens/Barra_Buscar_laranja.fw.png" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="VAG Rundschrift D" FontSize="13" Foreground="White" Height="26" HorizontalContentAlignment="Left" Margin="275,18,53,0" Name="textBoxBuscar" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="textBoxBuscar_KeyDown" MaxLength="45" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="25,18,0,0" Name="imageBuscar" Source="/EventViewer;component/Imagens/BUSCAR.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="69" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="213" Margin="13,76,12,0" Name="dataGridLocaisEventos" VerticalAlignment="Top" SelectionChanged="dataGridLocaisEventos_SelectionChanged" MouseDoubleClick="dataGridLocaisEventos_MouseDoubleClick" IsEnabled="True" EnableRowVirtualization="False" Focusable="True" IsHitTestVisible="True" IsReadOnly="True">
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.488" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.035" />
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id_local_de_evento}"/>
+                <DataGridTextColumn Header="Nome do local" Binding="{Binding Nome_do_local}" />
+                <DataGridTextColumn Header="Endereço Virtual" Binding="{Binding Endereco_virtual}"/>
+                <DataGridTextColumn Header="Logradouro" Binding="{Binding Endereco.Logradouro}" />
+                <DataGridTextColumn Header="Bairro" Binding="{Binding Endereco.Bairro.Nome_bairro}"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding Endereco.Bairro.Municipio.Nome_municipio}"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding Endereco.Bairro.Municipio.Estado.Nome_estado}"/>
+                <DataGridTextColumn Header="País" Binding="{Binding Endereco.Bairro.Municipio.Estado.Pais.Nome_pais}"/>
+                <DataGridTextColumn Header="Complemento" Binding="{Binding Complemento_do_local}"/>
+                <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status_loca}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image Height="78" HorizontalAlignment="Left" Margin="324,298,0,0" Name="imageOk" Source="/EventViewer;component/Imagens/botao_laranja_borda_normal_Ok.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="78" MouseDown="imageOk_MouseDown" MouseUp="imageOk_MouseUp" />
+        <CheckBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Pesquisar qualquer parte do nome" FontFamily="Arial Unicode MS" FontSize="12" Foreground="#FF676967" Height="18" HorizontalAlignment="Left" Margin="12,52,0,0" Name="checkBoxPesquisarParteNome" VerticalAlignment="Top" Width="207" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Ativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" IsChecked="True" Margin="498,55,0,0" Name="radioButtonCadastroAtivo" VerticalAlignment="Top" Width="54" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Inativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="568,55,0,0" Name="radioButtonCadastroInativo" VerticalAlignment="Top" Width="62" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Todos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="647,55,0,0" Name="RadioButtonTodos" VerticalAlignment="Top" Width="55" />
+    </Grid>
+</Window>

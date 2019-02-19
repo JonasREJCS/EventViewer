@@ -1,0 +1,76 @@
+﻿<Window x:Class="EventViewer.GRUPO_DE_PARTICIPANTES"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastro de grupo de participantes - Sistema EventViewer" Height="502" Width="782" WindowStartupLocation="CenterScreen">
+    <Grid Height="465">
+        <Label Content="id:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF0E68D5" Height="27" HorizontalAlignment="Left" Margin="219,363,0,0" Name="labelId" VerticalAlignment="Top" Width="24" />
+        <Image Height="32" Margin="166,390,0,0" Name="imageId" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="137" />
+        <Label Content="nome do grupo:" FontFamily="VAG Rundschrift D" FontSize="15" Height="27" HorizontalAlignment="Left" Margin="12,16,0,0" Name="labelNome" VerticalAlignment="Top" Width="118" Foreground="#FF0E68D5" />
+        <Image Height="32" Margin="16,52,0,0" Name="imageNome" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3GdInt.fw.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="277" />
+        <Label Content="status:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF0E68D5" Height="24" HorizontalAlignment="Left" Margin="39,366,0,0" Name="label1" VerticalAlignment="Top" Width="56" />
+        <Image Height="32" Margin="17,390,641,0" Name="image1" Source="/EventViewer;component/Imagens/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+        <GroupBox FontFamily="VAG Rundschrift D" Foreground="#FF0E68D5" Header="Descrição" Height="259" Margin="12,101,0,0" Name="groupBoxParticipante" OpacityMask="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="284">
+            <GroupBox.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.508" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.007" />
+                </LinearGradientBrush>
+            </GroupBox.BorderBrush>
+            <Grid Height="Auto" Margin="0" VerticalAlignment="Stretch">
+                <Image Height="226" HorizontalAlignment="Left" Margin="7,6,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="260" Source="/EventViewer;component/Imagens/Janela_DescricaoGd.fw.png" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF0E68D5" Height="193" Width="225" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="21,19,0,0" Name="textBoxDescricao" Text="" VerticalAlignment="Top" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Hidden" TextWrapping="Wrap" TabIndex="1" MaxLength="255" />
+            </Grid>
+        </GroupBox>
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="25,49,0,0" Name="textBoxNome" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="260" TabIndex="0" MaxLength="45" />
+        <Image Height="35" HorizontalAlignment="Left" Margin="313,8,0,0" Name="imageBarraBuscar" Source="/EventViewer;component/Imagens/Barra_Buscar_azul.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="430" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="322,14,0,0" Name="imageBuscar" Source="/EventViewer;component/IMAGENS/BUSCAR.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="71" />
+        <Image Height="38" HorizontalAlignment="Left" Margin="542,366,0,0" Name="imageCriarGrupo" Source="/EventViewer;component/Imagens/BotãoNormalNovoGrupo.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="201" MouseDown="imageCriarGrupo_MouseDown" />
+        <Image Height="38" HorizontalAlignment="Left" Margin="313,366,0,0" Name="imageNovo" Source="/EventViewer;component/Imagens/BotãoAzulAperteNovo.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="201" MouseDown="imageNovo_MouseDown" MouseUp="imageNovo_MouseUp" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" IsReadOnly="True" Margin="169,388,0,0" Name="textBoxId" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="124" TabIndex="4" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="VAG Rundschrift D" FontSize="13" Foreground="White" Height="26" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="508,12,0,0" Name="textBoxBuscar" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="202" KeyDown="textBoxBuscar_KeyDown" TabIndex="3" MaxLength="45" />
+        <Image Height="23" HorizontalAlignment="Left" Margin="519,155,0,0" Name="imageAdicionarParticipante" Source="/EventViewer;component/Imagens/DireitaNormal.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="20" MouseDown="imageAdicionarParticipante_MouseDown" MouseUp="imageAdicionarParticipante_MouseUp" />
+        <Image Height="23" HorizontalAlignment="Left" Margin="519,226,0,0" Name="imageRemoverParticipante" Source="/EventViewer;component/Imagens/EsquerdaNormal.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="20" MouseDown="imageRemoverParticipante_MouseDown" MouseUp="imageRemoverParticipante_MouseUp" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" EnableRowVirtualization="False" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="294" HorizontalAlignment="Left" IsReadOnly="True" Margin="313,60,0,0" Name="dataGridParticipantes" VerticalAlignment="Top" Width="201" MouseDoubleClick="dataGridParticipantes_MouseDoubleClick" SelectionMode="Single">
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.488" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.035" />
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id_pessoa}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Nome_pessoa}" Header="NOME" />
+                <DataGridTextColumn Binding="{Binding Endereco.Logradouro}" Header="LOGRADOURO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Nome_bairro}" Header="BAIRRO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Nome_municipio}" Header="CIDADE" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Estado.Nome_estado}" Header="ESTADO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Estado.Pais.Nome_pais}" Header="PAIS" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" EnableRowVirtualization="False" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="294" HorizontalAlignment="Left" IsReadOnly="True" Margin="542,60,0,0" Name="dataGridParticipantesGrupo" VerticalAlignment="Top" Width="201" MouseDoubleClick="dataGridParticipantesGrupo_MouseDoubleClick" SelectionMode="Single">
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.488" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.035" />
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id_pessoa}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding Nome_pessoa}" Header="NOME" />
+                <DataGridTextColumn Binding="{Binding Endereco.Logradouro}" Header="LOGRADOURO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Nome_bairro}" Header="BAIRRO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Nome_municipio}" Header="CIDADE" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Estado.Nome_estado}" Header="ESTADO" />
+                <DataGridTextColumn Binding="{Binding Endereco.Bairro.Municipio.Estado.Pais.Nome_pais}" Header="PAIS" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="29" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="17,393,0,0" Name="comboBoxStatus" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="102" TabIndex="2" BorderThickness="0">
+            <ComboBoxItem Content="Inativo" />
+            <ComboBoxItem Content="Ativo" IsSelected="True" />
+        </ComboBox>
+        <Image Height="43" HorizontalAlignment="Left" Margin="313,410,0,0" Name="imageBuscarGrupo" Stretch="Fill" VerticalAlignment="Top" Width="430" MouseDown="imageBuscar_MouseDown" Source="/EventViewer;component/Imagens/botao_consultar_grupo_participante_aperte.fw.png" />
+    </Grid>
+</Window>

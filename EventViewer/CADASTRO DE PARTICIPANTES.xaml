@@ -1,0 +1,122 @@
+﻿<Window x:Class="EventViewer.CADASTRO_DE_PARTICIPANTES"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastro de participante - Sistema EventViewer" Height="659" Width="778" WindowStartupLocation="CenterScreen" Drop="Window_Drop" AllowDrop="True" Loaded="Window_Loaded">
+    <Grid Width="751" Height="645" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*" />
+            <RowDefinition Height="395*" />
+        </Grid.RowDefinitions>
+        <Image Height="105.11" HorizontalAlignment="Left" Margin="31,23,0,0" Name="imageAvatar" Stretch="Fill" VerticalAlignment="Top" Width="117" OverridesDefaultStyle="False" UseLayoutRounding="False" AllowDrop="True" Source="/EventViewer;component/IMAGENS/AvatarFinal.fw.png" MouseDown="imageAvatar_MouseDown" />
+        <GroupBox Header="Participante" Height="148" Margin="177,23,12,0" Name="groupBoxParticipante" VerticalAlignment="Top" Foreground="#FF00A30F" OpacityMask="{x:Null}" FontFamily="VAG Rundschrift D">
+            <GroupBox.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.51" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.007" />
+                </LinearGradientBrush>
+            </GroupBox.BorderBrush>
+            <Grid Height="Auto" VerticalAlignment="Stretch" Margin="0" Width="547">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="219*" />
+                    <ColumnDefinition Width="328*" />
+                </Grid.ColumnDefinitions>
+                <Label Content="nome:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="8,9,0,0" Name="labelNome" VerticalAlignment="Top" Width="50" />
+                <Label Content="telefone:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Right" Margin="0,12,118,0" Name="labelTelefoneResidencial" VerticalAlignment="Top" Width="68" Grid.Column="1" />
+                <Image Height="32" Margin="56,8,182,0" Name="imageNome" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3GdInt.fw.png" Stretch="Fill" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="64,6,0,0" Name="textBoxNome" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="296" Grid.ColumnSpan="2" ToolTip="Insira o nome." MaxLength="100" KeyDown="textBoxNome_KeyDown">
+                                    </TextBox>
+                <Image Height="32" Margin="204,8,8,0" Name="imageTelefoneResidencial" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Grid.Column="1" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="212,6,0,0" Name="textBoxTelefoneResidencial" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="102" Grid.Column="1" MaxLength="20" KeyDown="textBoxTelefoneResidencial_KeyDown" />
+                <Label Content="celular:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Right" Margin="0,51,126,0" Name="labelTelefoneMovel" VerticalAlignment="Top" Width="58" Grid.Column="1" />
+                <Label Content="email:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="6,90,0,0" Name="labelEmail" VerticalAlignment="Top" Width="50" />
+                <Image Height="32" Margin="54,90,0,0" Name="imageEmail" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3GdInt.fw.png" Stretch="Fill" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="62,88,0,0" Name="textBoxEmail" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="465" Grid.ColumnSpan="2" MaxLength="45" KeyDown="textBoxEmail_KeyDown" />
+                <Image Height="32" Margin="204,50,8,0" Name="imageTelefoneMovel" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Grid.Column="1" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="212,48,0,0" Name="textBoxTelefoneMovel" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="102" Grid.Column="1" MaxLength="20" KeyDown="textBoxTelefoneMovel_KeyDown" />
+                <Label Content="rg:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Right" Margin="0,48,180,0" Name="labelRg" VerticalAlignment="Top" Width="28" />
+                <Label Content="cpf:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Grid.ColumnSpan="2" Height="27" HorizontalAlignment="Left" Margin="188,49,0,0" Name="labelCpf" VerticalAlignment="Top" Width="36" />
+                <Image Height="32" HorizontalAlignment="Right" Margin="0,48,36,0" Name="imageRg" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="144" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Right" HorizontalContentAlignment="Left" Margin="0,46,44,0" MaxLength="45" Name="textBoxRg" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="133" KeyDown="textBoxRg_KeyDown" TextChanged="textBoxRg_TextChanged" />
+                <Image Grid.Column="1" Height="32" HorizontalAlignment="Right" Margin="0,48,184,0" Name="imageCpf" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="144" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Grid.Column="1" Height="34" HorizontalAlignment="Right" HorizontalContentAlignment="Left" Margin="0,46,186,0" MaxLength="11" Name="textBoxCpf" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="133" KeyDown="textBoxCpf_KeyDown" />
+            </Grid>
+        </GroupBox>
+        <GroupBox FontFamily="VAG Rundschrift D" Foreground="#FF00A30F" Header="Endereço" Height="188" Margin="177,177,19,0" Name="groupBoxEndereco" VerticalAlignment="Top" Grid.RowSpan="2">
+            <GroupBox.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FFCFD1CF" Offset="0" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FF676967" Offset="0.494" />
+                </LinearGradientBrush>
+            </GroupBox.BorderBrush>
+            <Grid>
+                <Label Content="cep:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" Margin="2,11,0,0" Name="labelCep" VerticalAlignment="Top" HorizontalAlignment="Left" Width="36" MouseDoubleClick="labelCep_MouseDoubleClick" />
+                <Label Content="bairro:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="328,53,0,0" Name="labelBairro" VerticalAlignment="Top" Width="52" MouseDoubleClick="labelBairro_MouseDoubleClick" />
+                <Label Content="cidade:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="2,54,0,0" Name="labelCidade" VerticalAlignment="Top" Width="70" MouseDoubleClick="labelCidade_MouseDoubleClick" />
+                <Label Content="estado:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Right" Margin="0,11,159,0" Name="labelEstado" VerticalAlignment="Top" Width="56" MouseDoubleClick="labelEstado_MouseDoubleClick" />
+                <Label Content="país:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" Margin="151,10,0,0" Name="labelPais" VerticalAlignment="Top" HorizontalAlignment="Left" Width="39" MouseDoubleClick="labelPais_MouseDoubleClick" Focusable="True" />
+                <Image Height="32" Margin="34,9,398,0" Name="imageCep" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="43,7,0,0" Name="textBoxCep" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="102" KeyDown="textBoxCep_KeyDown" ToolTip="Insira o CEP." MaxLength="45" />
+                <Image Height="32" Margin="382,48,10,0" Name="imageBairro" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" ImageFailed="imageBairro_ImageFailed" />
+                <Image Height="32" Margin="62,49,220,0" Name="imageCidade" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <Image Height="32" Margin="382,7,10,0" Name="imageEstado" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <Image Height="32" Margin="188,9,212,0" Name="imagePais" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <Label Content="logradouro:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="0,92,0,0" Name="labelLogradouro" VerticalAlignment="Top" Width="88" MouseDoubleClick="labelLogradouro_MouseDoubleClick" />
+                <Label Content="número:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="357,131,0,0" Name="labelNumeroResidencial" VerticalAlignment="Top" Width="66" />
+                <Image Height="32" Margin="80,90,3,0" Name="imageLogradouro" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3GdInt.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <Image Height="32" Margin="420,129,8,0" Name="imageNumero" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="428,127,0,0" Name="textBoxNumeroResidencial" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="100" MaxLength="6" />
+                <Label Content="complemento:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="2,132,0,0" Name="labelComplemento" VerticalAlignment="Top" Width="103" />
+                <Image Height="32" Margin="98,131,0,0" Name="imageComplemento" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Left" Width="254" />
+                <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalContentAlignment="Left" Margin="106,129,0,0" Name="textBoxComplemento" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="236" MaxLength="100" KeyDown="textBoxComplemento_KeyDown" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="195,12,0,0" Name="comboBoxPais" VerticalAlignment="Top" Width="128" IsTextSearchCaseSensitive="False" ItemsSource="{Binding listaDePais}" DisplayMemberPath="Nome_pais" SelectedValuePath="Nome_pais" SelectedValue="{Binding Path=Pais}" KeyDown="comboBoxPais_KeyDown" IsEditable="True" SelectionChanged="comboBoxPais_SelectionChanged" ToolTip="Insira ou pesquise um país." IsTextSearchEnabled="False" MouseDoubleClick="comboBoxPais_MouseDoubleClick" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" />
+                <ComboBox DisplayMemberPath="Nome_estado" Height="23" HorizontalAlignment="Left" IsEditable="True" IsTextSearchCaseSensitive="False" ItemsSource="{Binding listaDeEstado}" Margin="379,9,0,0" Name="comboBoxEstado" SelectedValue="{Binding 
+Path=Estado}" SelectedValuePath="Nome_estado" VerticalAlignment="Top" Width="149" KeyDown="comboBoxEstado_KeyDown" SelectionChanged="comboBoxEstado_SelectionChanged" ToolTip="Insira ou pesquise um estado." IsTextSearchEnabled="False" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" />
+                <ComboBox DisplayMemberPath="Nome_municipio" Height="27" HorizontalAlignment="Left" IsEditable="True" IsTextSearchCaseSensitive="False" Margin="57,48,0,0" Name="comboBoxCidade" SelectedValue="{Binding Path=Municipio}" SelectedValuePath="Nome_municipio" VerticalAlignment="Top" Width="264" KeyDown="comboBoxCidade_KeyDown" SelectionChanged="comboBoxCidade_SelectionChanged" ToolTip="Insira ou pesquise uma cidade" IsTextSearchEnabled="False" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" />
+                <ComboBox DisplayMemberPath="Nome_bairro" Height="24" HorizontalAlignment="Left" IsEditable="True" IsTextSearchCaseSensitive="False" Margin="388,49,0,0" Name="comboBoxBairro" SelectedValue="{Binding Path=Bairro}" SelectedValuePath="Nome_bairro" VerticalAlignment="Top" Width="140" KeyDown="comboBoxBairro_KeyDown" SelectionChanged="comboBoxBairro_SelectionChanged" IsTextSearchEnabled="False" ToolTip="Insira ou pesquise um bairro." BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" />
+                <ComboBox DisplayMemberPath="Logradouro" Height="27" HorizontalAlignment="Left" IsEditable="True" IsTextSearchCaseSensitive="False" Margin="86,89,0,0" Name="comboBoxLogradouro" SelectedValue="{Binding Path=Endereco}" SelectedValuePath="Logradouro" VerticalAlignment="Top" Width="435" KeyDown="comboBoxLogradouro_KeyDown" SelectionChanged="comboBoxLogradouro_SelectionChanged" IsTextSearchEnabled="False" ToolTip="Insira ou pesquise um logradouro." BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" />
+            </Grid>
+        </GroupBox>
+        <Label Content="status:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="24" HorizontalAlignment="Left" Margin="61,264,0,0" Name="label16" VerticalAlignment="Top" Width="56" Grid.Row="1" />
+        <Image Height="32" Margin="43,293,613,0" Name="imageStatusParticipante" Source="/EventViewer;component/Imagens/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Grid.Row="1" />
+        <Image Height="90" HorizontalAlignment="Left" Margin="44,167,0,0" Name="imageBotaoExcluirNormal" Source="/EventViewer;component/IMAGENS/botao_verde_borda_normal_excluir.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="93" MouseDown="imageBotaoExcluirNormal_MouseDown" MouseUp="imageBotaoExcluirNormal_MouseUp" Grid.Row="1" />
+        <ComboBox Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="43,293,0,105" Name="comboBoxStatusParticipante" VerticalContentAlignment="Center" Width="92" Grid.Row="1">
+            <ComboBoxItem Content="Inativo" />
+            <ComboBoxItem Content="Ativo" IsSelected="True" />
+        </ComboBox>
+        <Image Height="90" HorizontalAlignment="Left" Margin="43,156,0,0" Name="imageBotaoNovoNormal" Source="/EventViewer;component/IMAGENS/botao_verde_borda_normal_novo.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="91" MouseDown="imageBotaoNovoNormal_MouseDown" MouseUp="imageBotaoNovoNormal_MouseUp" Grid.RowSpan="2" />
+        <Image Height="89" HorizontalAlignment="Left" Margin="41,49,0,0" Name="imageBotaoSalvarNormal" Source="/EventViewer;component/IMAGENS/botao_verde_borda_normal_salvar.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="93" MouseDown="imageBotaoSalvarNormal_MouseDown" MouseUp="imageBotaoSalvarNormal_MouseUp" Grid.Row="1" />
+        <Image Height="35" HorizontalAlignment="Left" Margin="178,159,0,0" Name="imageBarraBuscar" Source="/EventViewer;component/IMAGENS/BARRA_BUSCAR.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="552" Grid.Row="1" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="VAG Rundschrift D" FontSize="13" Foreground="White" Height="26" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="386,163,0,0" Name="textBoxBuscar" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Width="314" KeyDown="textBoxBuscar_KeyDown" MaxLength="45" Grid.Row="1" />
+        <Image Height="20" HorizontalAlignment="Left" Margin="190,166,0,0" Name="imageBuscar" Source="/EventViewer;component/IMAGENS/BUSCAR.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="71" Grid.Row="1" />
+        <DataGrid AutoGenerateColumns="False" Background="{x:Null}" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="172" HorizontalAlignment="Left" Margin="180,224,0,0" Name="dataGridParticipantes" VerticalAlignment="Top" Width="550" MouseDoubleClick="dataGridParticipantes_MouseDoubleClick" EnableRowVirtualization="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id_pessoa}" Header="ID" />
+                <DataGridTextColumn Header="NOME" Binding="{Binding Nome_pessoa}"/>
+                <DataGridTextColumn Header="LOGRADOURO" Binding="{Binding Endereco.Logradouro}"/>
+                <DataGridTextColumn Header="COMPLEMENTO" Binding="{Binding Complemento_residencia}"/>
+                <DataGridTextColumn Header="BAIRRO" Binding="{Binding Endereco.Bairro.Nome_bairro}"/>
+                <DataGridTextColumn Header="CIDADE" Binding="{Binding Endereco.Bairro.Municipio.Nome_municipio}"/>
+                <DataGridTextColumn Header="ESTADO" Binding="{Binding Endereco.Bairro.Municipio.Estado.Nome_estado}"/>
+                <DataGridTextColumn Header="PAIS" Binding="{Binding Endereco.Bairro.Municipio.Estado.Pais.Nome_pais}"/>
+                <DataGridCheckBoxColumn Header="Status" Binding="{Binding Status_pesso}"/>
+            </DataGrid.Columns>
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#FF676967" Offset="0.488" />
+                    <GradientStop Color="#FFCFD1CF" Offset="1" />
+                    <GradientStop Color="#FFCFD1CF" Offset="0.035" />
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
+        </DataGrid>
+        <Image AllowDrop="True" Height="105.11" HorizontalAlignment="Left" Margin="31,31,0,0" Name="image1" OverridesDefaultStyle="False" Source="/EventViewer;component/IMAGENS/cantos%20avatar.png" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="117" Visibility="Hidden" />
+        <CheckBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Pesquisar qualquer parte do nome" FontFamily="Arial Unicode MS" FontSize="12" Foreground="#FF676967" Height="18" HorizontalAlignment="Left" Margin="180,200,0,0" Name="checkBoxPesquisarParteNome" VerticalAlignment="Top" Width="207" Grid.Row="1" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Ativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="524,203,0,0" Name="radioButtonCadastroAtivo" VerticalAlignment="Top" Width="54" Grid.Row="1" />
+        <RadioButton Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Content="Inativos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="594,203,0,0" Name="radioButtonCadastroInativo" VerticalAlignment="Top" Width="62" Grid.Row="1" />
+        <RadioButton Background="{x:Null}" IsChecked="True"  BorderBrush="{x:Null}" BorderThickness="0" Content="Todos" FontFamily="Arial Unicode MS" Foreground="#FF676967" Height="15" HorizontalAlignment="Left" Margin="672,203,0,0" Name="RadioButtonTodos" VerticalAlignment="Top" Width="55" Grid.Row="1" />
+        <Label Content="id:" FontFamily="VAG Rundschrift D" FontSize="15" Foreground="#FF00A30F" Height="27" HorizontalAlignment="Left" Margin="77,321,0,0" Name="labelId" VerticalAlignment="Top" Width="24" Grid.Row="1" />
+        <Image Height="32" HorizontalAlignment="Left" Margin="44,348,0,0" Name="imageId" Source="/EventViewer;component/IMAGENS/TextBoxBrancoSombra3Int.fw.png" Stretch="Fill" VerticalAlignment="Top" Width="94" Grid.Row="1" />
+        <TextBox Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Arial Unicode MS" FontSize="14" Foreground="#FF676967" Height="34" HorizontalContentAlignment="Left" Margin="44,344,613,0" Name="textBoxId" Text="" VerticalAlignment="Top" VerticalContentAlignment="Center" Grid.Row="1" />
+    </Grid>
+</Window>
